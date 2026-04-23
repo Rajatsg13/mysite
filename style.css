@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #222;
+  background: #f7f9fc;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.cta {
+  background: #0b5ed7;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  color: #0b5ed7;
+}
+
+.primary-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #0b5ed7;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  flex: 1;
+  min-width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.steps div {
+  flex: 1;
+  padding: 10px;
+  background: #eef3ff;
+  margin: 5px;
+  border-radius: 6px;
+}
+
+.contact {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-top: 1px solid #eee;
+}
