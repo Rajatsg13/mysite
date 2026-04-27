@@ -1,6 +1,6 @@
 // ─── Booking Modal ────────────────────────────────────────────────────────────
 // Replace YOUR_FORM_ID with your Formspree form ID after signing up at formspree.io
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgorjwow';
 
 const bookingOverlay = document.getElementById('bookingModal');
 const bookingForm    = document.getElementById('bookingForm');
