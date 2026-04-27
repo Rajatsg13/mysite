@@ -1,3 +1,16 @@
+// ─── Theme Toggle ─────────────────────────────────────────────────────────────
+if (localStorage.getItem('theme') === 'light') {
+  document.body.classList.add('light');
+}
+
+const themeToggle = document.querySelector('.theme-toggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+  });
+}
+
 // ─── Smooth Scroll ────────────────────────────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
