@@ -22,7 +22,7 @@
       <a href="#process">Process</a>
       <a href="#case-study">Case Study</a>
       <a href="#about">About</a>
-      <a href="#contact" class="cta">Book Call</a>
+      <a href="#" class="cta open-booking">Book Call</a>
     </div>
     <button class="theme-toggle" aria-label="Toggle theme">
       <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -43,7 +43,7 @@
       <p class="hero-sub">Fractional Business &amp; Product Operations for founders who need clarity, speed, and control.</p>
       <p class="trust-line">—— 10+ years across Banking, Product &amp; Business Operations ——</p>
       <div class="hero-buttons">
-        <a href="#contact" class="primary-btn">Book a 30-min Clarity Call</a>
+        <a href="#" class="primary-btn open-booking">Book a 30-min Clarity Call</a>
         <a href="#case-study" class="secondary-btn">View Case Study</a>
       </div>
     </div>
@@ -151,7 +151,7 @@
           <span class="spec-value">Flexible, reviewed monthly</span>
         </div>
       </div>
-      <a href="#contact" class="primary-btn">Book a 30-min Clarity Call</a>
+      <a href="#" class="primary-btn open-booking">Book a 30-min Clarity Call</a>
     </div>
   </section>
 
@@ -236,7 +236,7 @@
   <!-- ─── CONTACT ──────────────────────────────────────────────────────────── -->
   <section id="contact" class="contact section-reveal">
     <h2>Ready to Bring Structure?</h2>
-    <a href="mailto:rjtshrma11@gmail.com" class="primary-btn">Book a 30-min Clarity Call</a>
+    <a href="#" class="primary-btn open-booking">Book a 30-min Clarity Call</a>
     <p class="contact-trust">No sales pitch. One focused conversation about your operations.</p>
   </section>
 
@@ -259,6 +259,95 @@
       <a href="mailto:rjtshrma11@gmail.com">rjtshrma11@gmail.com</a>
     </div>
   </footer>
+
+  <!-- ─── BOOKING MODAL ──────────────────────────────────────────────────────── -->
+  <div class="booking-overlay" id="bookingModal">
+    <div class="booking-modal">
+      <button class="booking-close" aria-label="Close">&times;</button>
+      <h3>Book a 30-min Clarity Call</h3>
+      <p class="booking-sub">No sales pitch. One focused conversation about your operations.</p>
+
+      <form class="booking-form" id="bookingForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookingName">Name *</label>
+            <input type="text" id="bookingName" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="bookingEmail">Email *</label>
+            <input type="email" id="bookingEmail" name="email" required placeholder="you@company.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookingDate">Preferred Date *</label>
+            <input type="date" id="bookingDate" name="date" required>
+          </div>
+          <div class="form-group">
+            <label for="bookingTime">Preferred Time *</label>
+            <input type="time" id="bookingTime" name="time" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="bookingTimezone">Timezone *</label>
+          <select id="bookingTimezone" name="timezone" required>
+            <option value="">Select your timezone</option>
+            <optgroup label="Americas">
+              <option value="Pacific/Honolulu">Hawaii (UTC−10)</option>
+              <option value="America/Anchorage">Alaska (UTC−9)</option>
+              <option value="America/Los_Angeles">Pacific Time – US &amp; Canada (UTC−8)</option>
+              <option value="America/Denver">Mountain Time – US &amp; Canada (UTC−7)</option>
+              <option value="America/Phoenix">Arizona – no DST (UTC−7)</option>
+              <option value="America/Chicago">Central Time – US &amp; Canada (UTC−6)</option>
+              <option value="America/New_York">Eastern Time – US &amp; Canada (UTC−5)</option>
+              <option value="America/Halifax">Atlantic Time – Canada (UTC−4)</option>
+              <option value="America/Caracas">Caracas, La Paz (UTC−4)</option>
+              <option value="America/Sao_Paulo">São Paulo, Buenos Aires (UTC−3)</option>
+            </optgroup>
+            <optgroup label="Europe &amp; Africa">
+              <option value="Atlantic/Azores">Azores (UTC−1)</option>
+              <option value="Europe/London">London, Dublin, Lisbon (UTC+0)</option>
+              <option value="Europe/Paris">Paris, Berlin, Madrid, Rome (UTC+1)</option>
+              <option value="Africa/Lagos">Lagos, Accra (UTC+1)</option>
+              <option value="Europe/Athens">Athens, Helsinki (UTC+2)</option>
+              <option value="Africa/Cairo">Cairo (UTC+2)</option>
+              <option value="Africa/Johannesburg">Johannesburg (UTC+2)</option>
+              <option value="Europe/Moscow">Moscow (UTC+3)</option>
+              <option value="Africa/Nairobi">Nairobi, Riyadh (UTC+3)</option>
+            </optgroup>
+            <optgroup label="Middle East &amp; Asia">
+              <option value="Asia/Tehran">Tehran (UTC+3:30)</option>
+              <option value="Asia/Dubai">Dubai, Abu Dhabi (UTC+4)</option>
+              <option value="Asia/Kabul">Kabul (UTC+4:30)</option>
+              <option value="Asia/Karachi">Karachi (UTC+5)</option>
+              <option value="Asia/Kolkata">Mumbai, New Delhi, Kolkata (UTC+5:30)</option>
+              <option value="Asia/Kathmandu">Kathmandu (UTC+5:45)</option>
+              <option value="Asia/Dhaka">Dhaka (UTC+6)</option>
+              <option value="Asia/Rangoon">Yangon (UTC+6:30)</option>
+              <option value="Asia/Bangkok">Bangkok, Jakarta, Hanoi (UTC+7)</option>
+              <option value="Asia/Singapore">Singapore, Beijing, Hong Kong (UTC+8)</option>
+              <option value="Asia/Tokyo">Tokyo, Seoul (UTC+9)</option>
+              <option value="Australia/Adelaide">Adelaide (UTC+9:30)</option>
+              <option value="Australia/Sydney">Sydney, Melbourne (UTC+10)</option>
+              <option value="Pacific/Auckland">Auckland, Wellington (UTC+12)</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bookingTopic">What would you like to discuss? <span>(optional)</span></label>
+          <textarea id="bookingTopic" name="topic" placeholder="Briefly describe your situation or what you'd like to cover..."></textarea>
+        </div>
+        <p class="booking-error" id="bookingError"></p>
+        <button type="submit" class="primary-btn booking-submit">Send Request</button>
+      </form>
+
+      <div class="booking-success" id="bookingSuccess">
+        <div class="success-icon">✓</div>
+        <h3>Request received!</h3>
+        <p>I'll confirm your time within 24 hours. Check your inbox for a reply from rjtshrma11@gmail.com.</p>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

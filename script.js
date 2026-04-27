@@ -1,3 +1,72 @@
+// ─── Booking Modal ────────────────────────────────────────────────────────────
+// Replace YOUR_FORM_ID with your Formspree form ID after signing up at formspree.io
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+const bookingOverlay = document.getElementById('bookingModal');
+const bookingForm    = document.getElementById('bookingForm');
+const bookingSuccess = document.getElementById('bookingSuccess');
+const bookingError   = document.getElementById('bookingError');
+const bookingClose   = document.querySelector('.booking-close');
+const dateInput      = document.getElementById('bookingDate');
+
+if (dateInput) {
+  dateInput.min = new Date().toISOString().split('T')[0];
+}
+
+function openBooking() {
+  bookingOverlay.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBooking() {
+  bookingOverlay.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.open-booking').forEach(el => {
+  el.addEventListener('click', e => { e.preventDefault(); openBooking(); });
+});
+
+if (bookingClose) bookingClose.addEventListener('click', closeBooking);
+
+if (bookingOverlay) {
+  bookingOverlay.addEventListener('click', e => {
+    if (e.target === bookingOverlay) closeBooking();
+  });
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeBooking();
+});
+
+if (bookingForm) {
+  bookingForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const submitBtn = bookingForm.querySelector('.booking-submit');
+    bookingError.textContent = '';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: new FormData(bookingForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        bookingForm.style.display = 'none';
+        bookingSuccess.style.display = 'block';
+      } else {
+        throw new Error();
+      }
+    } catch {
+      bookingError.textContent = 'Something went wrong. Please try again.';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Request';
+    }
+  });
+}
+
 // ─── Theme Toggle ─────────────────────────────────────────────────────────────
 if (localStorage.getItem('theme') === 'light') {
   document.body.classList.add('light');
