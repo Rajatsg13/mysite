@@ -36,7 +36,13 @@ if (bookingOverlay) {
 }
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeBooking();
+  if (e.key === 'Escape') {
+    closeBooking();
+    if (privacyModal) {
+      privacyModal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+  }
 });
 
 if (bookingForm) {
@@ -105,6 +111,40 @@ document.addEventListener('click', (e) => {
     !e.target.closest('.navbar')
   ) {
     document.body.classList.remove('nav-open');
+  }
+});
+
+// ─── Cookie Banner ────────────────────────────────────────────────────────────
+const cookieBanner = document.getElementById('cookieBanner');
+if (cookieBanner) {
+  if (!localStorage.getItem('cookieAccepted')) {
+    cookieBanner.classList.remove('hidden');
+  } else {
+    cookieBanner.classList.add('hidden');
+  }
+  document.getElementById('cookieAccept')?.addEventListener('click', () => {
+    localStorage.setItem('cookieAccepted', '1');
+    cookieBanner.classList.add('hidden');
+  });
+}
+
+// ─── Privacy Modal ────────────────────────────────────────────────────────────
+const privacyModal = document.getElementById('privacyModal');
+document.querySelectorAll('.open-privacy').forEach(el => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    privacyModal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+document.getElementById('privacyClose')?.addEventListener('click', () => {
+  privacyModal.classList.remove('is-open');
+  document.body.style.overflow = '';
+});
+privacyModal?.addEventListener('click', (e) => {
+  if (e.target === privacyModal) {
+    privacyModal.classList.remove('is-open');
+    document.body.style.overflow = '';
   }
 });
 
